@@ -199,7 +199,7 @@ public class GameOfLife {
                 }
                 
             }
-            System.out.println(" ");
+            System.out.println("");
         }
 	}
 		
