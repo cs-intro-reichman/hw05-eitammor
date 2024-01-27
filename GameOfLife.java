@@ -89,6 +89,7 @@ public class GameOfLife {
                         }
                         else
                         {
+				// #feedback - there is no need to set zero, the board is already filled with zero values, which is the default value for an integer array.
                             board[i][j] = 0;
                         }
                     }
@@ -121,6 +122,7 @@ public class GameOfLife {
 	// Uses the cellValue(board,i,j) function to compute the value of each 
 	// cell in the new board. Returns the new board.
 	public static int[][] evolve(int[][] board) {
+		// #feedback - note the indentation here.
         int rows = board.length;
         int cols =board[0].length;
         int[][] newBoard = new int[rows][cols];	
@@ -146,6 +148,7 @@ public class GameOfLife {
 	// Uses the count(board,i,j) function to count the number of alive neighbors.
 	public static int cellValue(int[][] board, int i, int j) {
 		int count = count(board, i, j);
+		// #feedback - note the indentation here.
         int cVal = board[i][j];
         //The cell is alive
         if (cVal==1)
@@ -178,6 +181,7 @@ public class GameOfLife {
 	// Assumes that i is at least 1 and at most the number of rows in the board - 1. 
 	// Assumes that j is at least 1 and at most the number of columns in the board - 1. 
 	public static int count(int[][] board, int i, int j) {
+		// #feedback - it is usually better to use for loop in these cases, since it's easier to forget a cell or have the wrong row/col.
         return (board[i-1][j-1]+board[i][j-1]+board[i+1][j-1]+board[i-1][j]+board[i+1][j]+board[i-1][j+1]+board[i][j+1]+board[i+1][j+1]);
 	}
 	
@@ -189,6 +193,7 @@ public class GameOfLife {
         {
             for (int j = 1; j<cols-1; j++)
             {
+		    // #feedback you should use printf function, as written in the exercise.
               System.out.print( "  "+arr[i][j]);
             }
             System.out.println("");
